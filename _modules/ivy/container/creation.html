@@ -306,10 +306,11 @@
 
 <span class="sd">        Examples</span>
 <span class="sd">        --------</span>
-<span class="sd">        With ivy.Container input</span>
+<span class="sd">        With :code:`ivy.Container` input:</span>
+
 <span class="sd">        &gt;&gt;&gt; x = ivy.Container(a = ivy.array([1,2,3]) ,b = ivy.array([4,5,6]))</span>
 <span class="sd">        &gt;&gt;&gt; fill_value = 10</span>
-<span class="sd">        &gt;&gt;&gt; y = ivy.Container.full_like(fill_value)</span>
+<span class="sd">        &gt;&gt;&gt; y = ivy.Container.static_full_like(fill_value)</span>
 <span class="sd">        {</span>
 <span class="sd">            a: ivy.array([10, 10, 10]),</span>
 <span class="sd">            b: ivy.array([10, 10, 10])</span>
@@ -318,7 +319,7 @@
 <span class="sd">        &gt;&gt;&gt; x = ivy.Container(a=ivy.array([1.2,2.2324,3.234]), \</span>
 <span class="sd">                               b=ivy.array([4.123,5.23,6.23]))</span>
 <span class="sd">        &gt;&gt;&gt; fill_value = 15.0</span>
-<span class="sd">        &gt;&gt;&gt; y = ivy.Container.full_like(fill_value)</span>
+<span class="sd">        &gt;&gt;&gt; y = ivy.Container.static_full_like(fill_value)</span>
 <span class="sd">        &gt;&gt;&gt; print(y)</span>
 <span class="sd">        {</span>
 <span class="sd">            a: ivy.array([15., 15., 15.]),</span>
@@ -390,7 +391,8 @@
 
 <span class="sd">        Examples</span>
 <span class="sd">        --------</span>
-<span class="sd">        With ivy.Container input</span>
+<span class="sd">        With :code:`ivy.Container` input:</span>
+
 <span class="sd">        &gt;&gt;&gt; x = ivy.Container(a = ivy.array([1,2,3]) ,b = ivy.array([4,5,6]))</span>
 <span class="sd">        &gt;&gt;&gt; fill_value = 10</span>
 <span class="sd">        &gt;&gt;&gt; y = x.full_like(fill_value)</span>

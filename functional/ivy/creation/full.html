@@ -80,6 +80,7 @@
 <li class="toctree-l2"><a class="reference internal" href="native_array.html">native_array</a></li>
 <li class="toctree-l2"><a class="reference internal" href="one_hot.html">one_hot</a></li>
 <li class="toctree-l2"><a class="reference internal" href="logspace.html">logspace</a></li>
+<li class="toctree-l2"><a class="reference internal" href="NestedSequence.html">NestedSequence</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../data_type.html">Data type</a></li>
@@ -228,7 +229,7 @@ inputs broadcast to.</p></li>
 <span class="go">ivy.array([[0.68, 0.68]])</span>
 </pre></div>
 </div>
-<p>With :code:’ivy.Container’ input:</p>
+<p>With <code class="code docutils literal notranslate"><span class="pre">ivy.Container</span></code> input:</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">shape</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Container</span><span class="p">(</span><span class="n">a</span><span class="o">=</span><span class="n">ivy</span><span class="o">.</span><span class="n">NativeShape</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)),</span> <span class="n">b</span><span class="o">=</span><span class="n">ivy</span><span class="o">.</span><span class="n">Shape</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)))</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">fill_value</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Container</span><span class="p">(</span><span class="n">a</span><span class="o">=</span><span class="mf">0.99</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">dtype</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Container</span><span class="p">(</span><span class="n">a</span><span class="o">=</span><span class="n">ivy</span><span class="o">.</span><span class="n">float64</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="n">ivy</span><span class="o">.</span><span class="n">bool</span><span class="p">)</span>
