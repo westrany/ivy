@@ -77,7 +77,7 @@
 <li class="toctree-l2"><a class="reference internal" href="16_ivy_frontends.html">Ivy Frontends</a></li>
 <li class="toctree-l2"><a class="reference internal" href="17_ivy_frontends_tests.html">Ivy Frontend Tests</a></li>
 <li class="toctree-l2"><a class="reference internal" href="18_exception_handling.html">Exception Handling</a></li>
-<li class="toctree-l2"><a class="reference internal" href="19_continuous_integration.html">Continuous Integration (CI) 🔁</a></li>
+<li class="toctree-l2"><a class="reference internal" href="19_continuous_integration.html">Continuous Integration</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../faq.html">FAQ</a></li>
@@ -275,9 +275,9 @@ Likewise, all backend implementations at
 </ul>
 <p>Nearly all the functions in the <a class="reference external" href="https://data-apis.org/array-api/2021.12/API_specification/array_object.html#api-specification-array-object--page-root">Array API Standard convention</a> have strictly positional-only and keyword-only arguments, with an exception of
 few <code class="code docutils literal notranslate"><span class="pre">creation</span></code> functions such as <code class="code docutils literal notranslate"><span class="pre">ones(shape,</span> <span class="pre">*,</span> <span class="pre">dtype=None,</span> <span class="pre">device=None)</span></code> , <code class="code docutils literal notranslate"><span class="pre">linspace(start,</span> <span class="pre">stop,</span> <span class="pre">/,</span> <span class="pre">num,</span> <span class="pre">*,</span> <span class="pre">dtype=None,</span> <span class="pre">device=None,</span> <span class="pre">endpoint=True)</span></code> etc.
-The rationale behind this is purely a convention. The <code class="code docutils literal notranslate"><span class="pre">shape</span></code> argument is often passed as a keyword, while the <code class="code docutils literal notranslate"><span class="pre">nums</span></code> argument in <code class="code docutils literal notranslate"><span class="pre">linspace</span></code> is often
+The rationale behind this is purely a convention. The <code class="code docutils literal notranslate"><span class="pre">shape</span></code> argument is often passed as a keyword, while the <code class="code docutils literal notranslate"><span class="pre">num</span></code> argument in <code class="code docutils literal notranslate"><span class="pre">linspace</span></code> is often
 passed as a keyword for improved understandability of the code. Therefore, given that Ivy fully adheres to the Array API Standard, Ivy also adopts these same exceptions to the
-general rule for the :code:shape and :code:num arguments in these functions.</p>
+general rule for the <code class="code docutils literal notranslate"><span class="pre">shape</span></code> and <code class="code docutils literal notranslate"><span class="pre">num</span></code> arguments in these functions.</p>
 </section>
 <section id="arrays">
 <h2>Arrays<a class="headerlink" href="#arrays" title="Permalink to this heading"></a></h2>
@@ -352,9 +352,8 @@ Therefore, we simply omit these <code class="xref py py-class docutils literal n
 and instead mention in the docstring whether the function is <em>nestable</em> or not.</p>
 <p><strong>Round Up</strong></p>
 <p>These examples should hopefully give you a good understanding of what is required when adding function arguments.</p>
-<p>If you’re ever unsure of how best to proceed,
-please feel free to engage with the <a class="reference external" href="https://github.com/unifyai/ivy/discussions/1320">function arguments discussion</a>,
-or reach out on <a class="reference external" href="https://discord.gg/ZVQdvbzNQJ">discord</a> in the <a class="reference external" href="https://discord.com/channels/799879767196958751/982738240354254898">function arguments channel</a>!</p>
+<p>If you have any questions, please feel free to reach out on <a class="reference external" href="https://discord.gg/sXyFF8tDtm">discord</a> in the <a class="reference external" href="https://discord.com/channels/799879767196958751/982738240354254898">function arguments channel</a>
+or in the <a class="reference external" href="https://discord.com/channels/799879767196958751/1028297557178331187">function arguments forum</a>!</p>
 <p><strong>Video</strong></p>
 <iframe width="420" height="315"
 src="https://www.youtube.com/embed/5cAbryXza18" class="video">

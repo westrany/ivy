@@ -72,7 +72,7 @@
 <li class="toctree-l2"><a class="reference internal" href="16_ivy_frontends.html">Ivy Frontends</a></li>
 <li class="toctree-l2"><a class="reference internal" href="17_ivy_frontends_tests.html">Ivy Frontend Tests</a></li>
 <li class="toctree-l2"><a class="reference internal" href="18_exception_handling.html">Exception Handling</a></li>
-<li class="toctree-l2"><a class="reference internal" href="19_continuous_integration.html">Continuous Integration (CI) 🔁</a></li>
+<li class="toctree-l2"><a class="reference internal" href="19_continuous_integration.html">Continuous Integration</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../faq.html">FAQ</a></li>
@@ -165,19 +165,19 @@
 the final step is to add helpful examples to the docstrings.</p>
 <p>There are eight types of examples, which each need to be added:</p>
 <p><strong>Functional</strong> examples show the function being called like so
-<code class="code docutils literal notranslate"><span class="pre">ivy.&lt;func_name&gt;(...)</span></code>, and these should be added to docstring of the function
-in the Ivy API <code class="xref py py-func docutils literal notranslate"><span class="pre">ivy.</span></code>.</p>
+<code class="code docutils literal notranslate"><span class="pre">ivy.func_name(...)</span></code>, and these should be added to docstring of the function
+in the Ivy API <code class="xref py py-func docutils literal notranslate"><span class="pre">ivy.func_name()</span></code>.</p>
 <p><strong>Container static method</strong> examples show the method being called like so
-<code class="code docutils literal notranslate"><span class="pre">ivy.Container.static_&lt;func_name&gt;(...)</span></code>, and these should be added to the
-docstring of the static container method <code class="xref py py-meth docutils literal notranslate"><span class="pre">ivy.Container.static_</span></code>.</p>
+<code class="code docutils literal notranslate"><span class="pre">ivy.Container.static_func_name(...)</span></code>, and these should be added to the
+docstring of the static container method <code class="xref py py-meth docutils literal notranslate"><span class="pre">ivy.Container.static_func_name()</span></code>.</p>
 <p><strong>Array instance method</strong> examples show the method being called like so
 <code class="code docutils literal notranslate"><span class="pre">x.func_name(...)</span></code> on an <code class="xref py py-class docutils literal notranslate"><span class="pre">ivy.Array</span></code> instance,
 and these should be added to the docstring of the <code class="xref py py-class docutils literal notranslate"><span class="pre">ivy.Array</span></code> instance method
-<code class="xref py py-meth docutils literal notranslate"><span class="pre">ivy.Array.</span></code>.</p>
+<code class="xref py py-meth docutils literal notranslate"><span class="pre">ivy.Array.func_name()</span></code>.</p>
 <p><strong>Container instance method</strong> examples show the method being called like so
 <code class="code docutils literal notranslate"><span class="pre">x.func_name(...)</span></code> on an <code class="xref py py-class docutils literal notranslate"><span class="pre">ivy.Container</span></code> instance,
 and these should be added to the docstring of the <code class="xref py py-class docutils literal notranslate"><span class="pre">ivy.Container</span></code> instance method
-<code class="xref py py-meth docutils literal notranslate"><span class="pre">ivy.Container.</span></code>.</p>
+<code class="xref py py-meth docutils literal notranslate"><span class="pre">ivy.Container.func_name()</span></code>.</p>
 <p><strong>Array operator</strong> examples show an operation being performed like so <code class="code docutils literal notranslate"><span class="pre">x</span> <span class="pre">+</span> <span class="pre">y</span></code>
 with <code class="code docutils literal notranslate"><span class="pre">x</span></code> being an <code class="xref py py-class docutils literal notranslate"><span class="pre">ivy.Array</span></code> instance, and these should be added to the
 docstring of the <code class="xref py py-class docutils literal notranslate"><span class="pre">ivy.Array</span></code> special method <code class="xref py py-meth docutils literal notranslate"><span class="pre">ivy.Array.__&lt;op_name&gt;__()</span></code>.</p>
@@ -207,8 +207,8 @@ instance upon which the operator is being applied.
 These special methods in turn call the functions in the Ivy API mentioned above.</p>
 <p><strong>Functional Examples</strong></p>
 <p>To recap, <em>functional</em> examples show the function being called like so
-<code class="code docutils literal notranslate"><span class="pre">ivy.&lt;func_name&gt;(...)</span></code>, and these should be added to docstring of the function
-in the Ivy API <code class="xref py py-func docutils literal notranslate"><span class="pre">ivy.</span></code>.</p>
+<code class="code docutils literal notranslate"><span class="pre">ivy.func_name(...)</span></code>, and these should be added to docstring of the function
+in the Ivy API <code class="xref py py-func docutils literal notranslate"><span class="pre">ivy.func_name()</span></code>.</p>
 <p>Firstly, we should include <em>functional</em> examples with <code class="xref py py-class docutils literal notranslate"><span class="pre">ivy.Array</span></code> instances in the input.</p>
 <p>These should:</p>
 <ol class="arabic simple">
@@ -251,27 +251,27 @@ For example, the following container is okay to use for example purposes:</p>
 </div>
 <p><strong>Container Static Method Examples</strong></p>
 <p>To recap, <em>container static method</em> examples show the method being called like so
-<code class="code docutils literal notranslate"><span class="pre">ivy.Container.static_&lt;func_name&gt;(...)</span></code>, and these should be added to the
-docstring of the static container method <code class="xref py py-meth docutils literal notranslate"><span class="pre">ivy.Container.static_</span></code>.</p>
+<code class="code docutils literal notranslate"><span class="pre">ivy.Container.static_func_name(...)</span></code>, and these should be added to the
+docstring of the static container method <code class="xref py py-meth docutils literal notranslate"><span class="pre">ivy.Container.static_func_name()</span></code>.</p>
 <p>The static methods of the <code class="xref py py-class docutils literal notranslate"><span class="pre">ivy.Container</span></code> class are used under the hood when
 supporting the <em>nestable</em> property for all Ivy functions in the API,
 as showcased by the examples for points 6 and 7. We should demonstrate these same
 examples in the static method docstrings also.</p>
 <ol class="arabic simple" start="8">
 <li><p>the example from point 6 should be replicated, but added to the <code class="xref py py-class docutils literal notranslate"><span class="pre">ivy.Container</span></code>
-static method <code class="xref py py-meth docutils literal notranslate"><span class="pre">ivy.Container.static_</span></code> docstring. With
-<code class="xref py py-func docutils literal notranslate"><span class="pre">ivy.</span></code> replaced with <code class="xref py py-meth docutils literal notranslate"><span class="pre">ivy.Container.static_</span></code>
+static method <code class="xref py py-meth docutils literal notranslate"><span class="pre">ivy.Container.static_func_name()</span></code> docstring. With
+<code class="xref py py-func docutils literal notranslate"><span class="pre">ivy.func_name()</span></code> replaced with <code class="xref py py-meth docutils literal notranslate"><span class="pre">ivy.Container.static_func_name()</span></code>
 in the example.</p></li>
 <li><p>the example from point 7 should be replicated, but added to the <code class="xref py py-class docutils literal notranslate"><span class="pre">ivy.Container</span></code>
-static method <code class="xref py py-meth docutils literal notranslate"><span class="pre">ivy.Container.static_</span></code> docstring. With
-<code class="xref py py-func docutils literal notranslate"><span class="pre">ivy.</span></code> replaced with <code class="xref py py-meth docutils literal notranslate"><span class="pre">ivy.Container.static_</span></code>
+static method <code class="xref py py-meth docutils literal notranslate"><span class="pre">ivy.Container.static_func_name()</span></code> docstring. With
+<code class="xref py py-func docutils literal notranslate"><span class="pre">ivy.func_name()</span></code> replaced with <code class="xref py py-meth docutils literal notranslate"><span class="pre">ivy.Container.static_func_name()</span></code>
 in the example.</p></li>
 </ol>
 <p><strong>Array Instance Method Example</strong></p>
 <p>To recap, <em>array instance method</em> examples show the method being called like so
 <code class="code docutils literal notranslate"><span class="pre">x.func_name(...)</span></code> on an <code class="xref py py-class docutils literal notranslate"><span class="pre">ivy.Array</span></code> instance,
 and these should be added to the docstring of the <code class="xref py py-class docutils literal notranslate"><span class="pre">ivy.Array</span></code> instance method
-<code class="xref py py-meth docutils literal notranslate"><span class="pre">ivy.Array.</span></code>.</p>
+<code class="xref py py-meth docutils literal notranslate"><span class="pre">ivy.Array.func_name()</span></code>.</p>
 <p>These examples are of course only relevant if an instance method for
 the function exists. If so, this example should simply:</p>
 <ol class="arabic simple" start="10">
@@ -281,7 +281,7 @@ the function exists. If so, this example should simply:</p>
 <p>To recap, <em>container instance method</em> examples show the method being called like so
 <code class="code docutils literal notranslate"><span class="pre">x.func_name(...)</span></code> on an <code class="xref py py-class docutils literal notranslate"><span class="pre">ivy.Container</span></code> instance,
 and these should be added to the docstring of the <code class="xref py py-class docutils literal notranslate"><span class="pre">ivy.Container</span></code> instance method
-<code class="xref py py-meth docutils literal notranslate"><span class="pre">ivy.Container.</span></code>.</p>
+<code class="xref py py-meth docutils literal notranslate"><span class="pre">ivy.Container.func_name()</span></code>.</p>
 <p>These examples are of course only relevant if an instance method
 for the function exists. If so, this example should simply:</p>
 <ol class="arabic simple" start="11">
@@ -401,8 +401,8 @@ ivy.array([0., 1.5574077, -2.1850398])
 &gt;&gt;&gt; print(y)
 ivy.array([0.5463025, -0.8422884, -0.91601413])
 
-&gt;&gt;&gt; x = ivy.array([[1.1, 2.2, 3.3], \
-                   [-4.4, -5.5, -6.6]])
+&gt;&gt;&gt; x = ivy.array([[1.1, 2.2, 3.3],
+...                [-4.4, -5.5, -6.6]])
 &gt;&gt;&gt; ivy.tan(x, out=x)
 &gt;&gt;&gt; print(x)
 ivy.array([[ 1.9647598, -1.3738229,  0.1597457],
@@ -411,7 +411,7 @@ ivy.array([[ 1.9647598, -1.3738229,  0.1597457],
 </div>
 <p>These examples cover points 1, 2, 3, 4 and 5.</p>
 <p>Please note that in the above case of <cite>x</cite> having multi-line input, it is necessary for each line of the input
-to be seperated by a ‘\’ so that they can be parsed by the script that tests the examples in the docstrings.</p>
+to be seperated by a ‘…' so that they can be parsed by the script that tests the examples in the docstrings.</p>
 <p>Point 1 is simple to satisfy. Ignoring the union over <code class="xref py py-class docutils literal notranslate"><span class="pre">ivy.Array</span></code> and <code class="xref py py-class docutils literal notranslate"><span class="pre">ivy.NativeArray</span></code> which is covered by
 points 6 and 7, and ignoring the <em>nestable</em> nature of the function which is covered by points 8 and 9,
 then as far as point 1 is concerned, the input <code class="code docutils literal notranslate"><span class="pre">x</span></code> only has one possible variation. It must be an array.</p>
@@ -513,16 +513,16 @@ With :class:`ivy.Array` input:
 &gt;&gt;&gt; print(y)
 ivy.array([2., 0., 1.])
 
-&gt;&gt;&gt; x = ivy.array([[0., 1., 2.], \
-                   [3., 4., 5.]])
+&gt;&gt;&gt; x = ivy.array([[0., 1., 2.],
+...                [3., 4., 5.]])
 &gt;&gt;&gt; y = ivy.zeros((2, 3))
 &gt;&gt;&gt; ivy.roll(x, 2, -1, out=y)
 &gt;&gt;&gt; print(y)
 ivy.array([[1., 2., 0.],
            [4., 5., 3.]])
 
-&gt;&gt;&gt; x = ivy.array([[[0., 0.], [1., 3.], [2., 6.]], \
-                   [[3., 9.], [4., 12.], [5., 15.]]])
+&gt;&gt;&gt; x = ivy.array([[[0., 0.], [1., 3.], [2., 6.]],
+...                 [[3., 9.], [4., 12.], [5., 15.]]])
 &gt;&gt;&gt; ivy.roll(x, (1, -1), (0, 2), out=x)
 &gt;&gt;&gt; print(x)
 ivy.array([[[ 9., 3.],
@@ -535,7 +535,7 @@ ivy.array([[[ 9., 3.],
 </div>
 <p>These examples cover points 1, 2, 3, 4 and 5.</p>
 <p>Again, please note that in the above case of <cite>x</cite> having multi-line input, it is necessary for each line of the input
-to be seperated by a ‘\’ so that they can be parsed by the script that tests the examples in the docstrings.</p>
+to be seperated by a ‘…' so that they can be parsed by the script that tests the examples in the docstrings.</p>
 <p>Point 1 is a bit less trivial to satisfy than it was for <code class="xref py py-func docutils literal notranslate"><span class="pre">ivy.tan()</span></code> above. While <code class="code docutils literal notranslate"><span class="pre">x</span></code> again only has one
 variation (for the same reason as explained in the <code class="xref py py-func docutils literal notranslate"><span class="pre">ivy.tan()</span></code> example above), <code class="code docutils literal notranslate"><span class="pre">shift</span></code> has two variations
 (<code class="code docutils literal notranslate"><span class="pre">int</span></code> or sequence of <code class="code docutils literal notranslate"><span class="pre">int</span></code>), and <code class="code docutils literal notranslate"><span class="pre">axis</span></code> has three variations
@@ -554,8 +554,8 @@ making all three examples possible.</p>
 <p>We then also add an example with an <code class="xref py py-class docutils literal notranslate"><span class="pre">ivy.Container</span></code> for one of the inputs, in order to satisfy point 6.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span>With one :class:`ivy.Container` input:
 
-&gt;&gt;&gt; x = ivy.Container(a=ivy.array([0., 1., 2.]), \
-                      b=ivy.array([3., 4., 5.]))
+&gt;&gt;&gt; x = ivy.Container(a=ivy.array([0., 1., 2.]),
+...                   b=ivy.array([3., 4., 5.]))
 &gt;&gt;&gt; y = ivy.roll(x, 1)
 &gt;&gt;&gt; print(y)
 {
@@ -570,8 +570,8 @@ We can therefore add an example with multiple <code class="xref py py-class docu
 in order to satisfy point 7.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span>With multiple :class:`ivy.Container` inputs:
 
-&gt;&gt;&gt; x = ivy.Container(a=ivy.array([0., 1., 2.]), \
-                      b=ivy.array([3., 4., 5.]))
+&gt;&gt;&gt; x = ivy.Container(a=ivy.array([0., 1., 2.]),
+...                   b=ivy.array([3., 4., 5.]))
 &gt;&gt;&gt; shift = ivy.Container(a=1, b=-1)
 &gt;&gt;&gt; y = ivy.roll(x, shift)
 &gt;&gt;&gt; print(y)
@@ -590,8 +590,8 @@ in order to satisfy point 8.</p>
 
 With one :class:`ivy.Container` input:
 
-&gt;&gt;&gt; x = ivy.Container(a=ivy.array([0., 1., 2.]), \
-                      b=ivy.array([3., 4., 5.]))
+&gt;&gt;&gt; x = ivy.Container(a=ivy.array([0., 1., 2.]),
+...                   b=ivy.array([3., 4., 5.]))
 &gt;&gt;&gt; y = ivy.Container.static_roll(x, 1)
 &gt;&gt;&gt; print(y)
 {
@@ -605,8 +605,8 @@ With one :class:`ivy.Container` input:
 in order to satisfy point 9.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span>With multiple :class:`ivy.Container` inputs:
 
-&gt;&gt;&gt; x = ivy.Container(a=ivy.array([0., 1., 2.]), \
-                      b=ivy.array([3., 4., 5.]))
+&gt;&gt;&gt; x = ivy.Container(a=ivy.array([0., 1., 2.]),
+...                   b=ivy.array([3., 4., 5.]))
 &gt;&gt;&gt; shift = ivy.Container(a=1, b=-1)
 &gt;&gt;&gt; y = ivy.Container.static_roll(x, shift)
 &gt;&gt;&gt; print(y)
@@ -696,7 +696,7 @@ ivy.array([[[9.5],
 </div>
 <p>These examples cover points 1, 2, 3, 4 and 5.</p>
 <p>Again, please note that in the above case of <cite>x</cite> having multi-line input, it is necessary for each line of the input
-to be seperated by a ‘\’ so that they can be parsed by the script that tests the examples in the docstrings.</p>
+to be seperated by a ‘…' so that they can be parsed by the script that tests the examples in the docstrings.</p>
 <p>Point 1 is again trivial to satisfy, as was the case for <code class="xref py py-func docutils literal notranslate"><span class="pre">ivy.tan()</span></code>.
 Ignoring the union over <code class="xref py py-class docutils literal notranslate"><span class="pre">ivy.Array</span></code> and <code class="xref py py-class docutils literal notranslate"><span class="pre">ivy.NativeArray</span></code> which is covered by points 6 and 7,
 and also ignoring the <em>nestable</em> nature of the function which is covered by points 8 and 9,
@@ -715,8 +715,8 @@ the broadcasting rules to apply, which dictates how the operation is performed a
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span>With one :class:`ivy.Container` input:
 
 &gt;&gt;&gt; x = ivy.array([[1.1, 2.3, -3.6]])
-&gt;&gt;&gt; y = ivy.Container(a=ivy.array([[4.], [5.], [6.]]),\
-                      b=ivy.array([[5.], [6.], [7.]]))
+&gt;&gt;&gt; y = ivy.Container(a=ivy.array([[4.], [5.], [6.]]),
+...                   b=ivy.array([[5.], [6.], [7.]]))
 &gt;&gt;&gt; z = ivy.add(x, y)
 &gt;&gt;&gt; print(z)
 {
@@ -735,10 +735,10 @@ We can therefore add an example with multiple <code class="xref py py-class docu
 in order to satisfy point 7.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span>With multiple :class:`ivy.Container` inputs:
 
-&gt;&gt;&gt; x = ivy.Container(a=ivy.array([1, 2, 3]),\
-                      b=ivy.array([2, 3, 4]))
-&gt;&gt;&gt; y = ivy.Container(a=ivy.array([4, 5, 6]),\
-                      b=ivy.array([5, 6, 7]))
+&gt;&gt;&gt; x = ivy.Container(a=ivy.array([1, 2, 3]),
+...                   b=ivy.array([2, 3, 4]))
+&gt;&gt;&gt; y = ivy.Container(a=ivy.array([4, 5, 6]),
+...                   b=ivy.array([5, 6, 7]))
 &gt;&gt;&gt; z = ivy.add(x, y)
 &gt;&gt;&gt; print(z)
 {
@@ -757,8 +757,8 @@ in order to satisfy point 8.</p>
 With one :class:`ivy.Container` input:
 
 &gt;&gt;&gt; x = ivy.array([[1.1, 2.3, -3.6]])
-&gt;&gt;&gt; y = ivy.Container(a=ivy.array([[4.], [5.], [6.]]),\
-                      b=ivy.array([[5.], [6.], [7.]]))
+&gt;&gt;&gt; y = ivy.Container(a=ivy.array([[4.], [5.], [6.]]),
+...                   b=ivy.array([[5.], [6.], [7.]]))
 &gt;&gt;&gt; z = ivy.Container.static_add(x, y)
 &gt;&gt;&gt; print(z)
 {
@@ -776,10 +776,10 @@ With one :class:`ivy.Container` input:
 in order to satisfy point 9.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span>With multiple :class:`ivy.Container` inputs:
 
-&gt;&gt;&gt; x = ivy.Container(a=ivy.array([1, 2, 3]), \
-                    b=ivy.array([2, 3, 4]))
-&gt;&gt;&gt; y = ivy.Container(a=ivy.array([4, 5, 6]),\
-                    b=ivy.array([5, 6, 7]))
+&gt;&gt;&gt; x = ivy.Container(a=ivy.array([1, 2, 3]),
+...                   b=ivy.array([2, 3, 4]))
+&gt;&gt;&gt; y = ivy.Container(a=ivy.array([4, 5, 6]),
+...                   b=ivy.array([5, 6, 7]))
 &gt;&gt;&gt; z = ivy.Container.static_add(x, y)
 &gt;&gt;&gt; print(z)
 {
@@ -807,10 +807,10 @@ point 11.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Examples</span>
 <span class="o">--------</span>
 
-<span class="o">&gt;&gt;&gt;</span> <span class="n">x</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Container</span><span class="p">(</span><span class="n">a</span><span class="o">=</span><span class="n">ivy</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]),</span>\
-                      <span class="n">b</span><span class="o">=</span><span class="n">ivy</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]))</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">y</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Container</span><span class="p">(</span><span class="n">a</span><span class="o">=</span><span class="n">ivy</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]),</span>\
-                      <span class="n">b</span><span class="o">=</span><span class="n">ivy</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">]))</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">x</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Container</span><span class="p">(</span><span class="n">a</span><span class="o">=</span><span class="n">ivy</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]),</span>
+<span class="o">...</span>                   <span class="n">b</span><span class="o">=</span><span class="n">ivy</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]))</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">y</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Container</span><span class="p">(</span><span class="n">a</span><span class="o">=</span><span class="n">ivy</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]),</span>
+<span class="o">...</span>                   <span class="n">b</span><span class="o">=</span><span class="n">ivy</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">]))</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">z</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="nb">print</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
 <span class="p">{</span>
@@ -840,8 +840,8 @@ docstring, with the operator called with an <code class="xref py py-class docuti
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span>With mix of :class:`ivy.Array` and :class:`ivy.Container` instances:
 
 &gt;&gt;&gt; x = ivy.array([[1.1, 2.3, -3.6]])
-&gt;&gt;&gt; y = ivy.Container(a=ivy.array([[4.], [5.], [6.]]),\
-                    b=ivy.array([[5.], [6.], [7.]]))
+&gt;&gt;&gt; y = ivy.Container(a=ivy.array([[4.], [5.], [6.]]),
+...                   b=ivy.array([[5.], [6.], [7.]]))
 &gt;&gt;&gt; z = x + y
 &gt;&gt;&gt; print(z)
 {
@@ -892,10 +892,10 @@ docstring, with the operator called on two <code class="xref py py-class docutil
 <code class="xref py py-class docutils literal notranslate"><span class="pre">ivy.Array</span></code> instances at the leaves.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span>With :class:`ivy.Array` instances at the leaves:
 
-&gt;&gt;&gt; x = ivy.Container(a=ivy.array([1, 2, 3]),\
-                      b=ivy.array([2, 3, 4]))
-&gt;&gt;&gt; y = ivy.Container(a=ivy.array([4, 5, 6]), \
-                      b=ivy.array([5, 6, 7]))
+&gt;&gt;&gt; x = ivy.Container(a=ivy.array([1, 2, 3]),
+...                   b=ivy.array([2, 3, 4]))
+&gt;&gt;&gt; y = ivy.Container(a=ivy.array([4, 5, 6]),
+...                   b=ivy.array([5, 6, 7]))
 &gt;&gt;&gt; z = x + y
 &gt;&gt;&gt; print(z)
 {
@@ -909,8 +909,8 @@ docstring, with the operator called with an <code class="xref py py-class docuti
 and <code class="xref py py-class docutils literal notranslate"><span class="pre">ivy.Array</span></code> on the right.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span>With a mix of :class:`ivy.Container` and :class:`ivy.Array` instances:
 
-&gt;&gt;&gt; x = ivy.Container(a=ivy.array([[4.], [5.], [6.]]),\
-                      b=ivy.array([[5.], [6.], [7.]]))
+&gt;&gt;&gt; x = ivy.Container(a=ivy.array([[4.], [5.], [6.]]),
+...                   b=ivy.array([[5.], [6.], [7.]]))
 &gt;&gt;&gt; y = ivy.array([[1.1, 2.3, -3.6]])
 &gt;&gt;&gt; z = x + y
 &gt;&gt;&gt; print(z)
@@ -974,9 +974,8 @@ the completion of docstring formatting.</p>
 <p><strong>Round Up</strong></p>
 <p>These three examples should give you a good understanding of what is required when
 adding docstring examples.</p>
-<p>If you’re ever unsure of how best to proceed,
-please feel free to engage with the <a class="reference external" href="https://github.com/unifyai/ivy/discussions/1322">docstring examples discussion</a>,
-or reach out on <a class="reference external" href="https://discord.gg/ZVQdvbzNQJ">discord</a> in the <a class="reference external" href="https://discord.com/channels/799879767196958751/982738352103129098">docstring examples channel</a>!</p>
+<p>If you have any questions, please feel free to reach out on <a class="reference external" href="https://discord.gg/sXyFF8tDtm">discord</a> in the <a class="reference external" href="https://discord.com/channels/799879767196958751/982738352103129098">docstring examples channel</a>
+or in the <a class="reference external" href="https://discord.com/channels/799879767196958751/1028297703089774705">docstring examples forum</a>!</p>
 <p><strong>Video</strong></p>
 <iframe width="420" height="315"
 src="https://www.youtube.com/embed/rtce8XthiKA" class="video">
